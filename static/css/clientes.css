@@ -1,0 +1,46 @@
+#clientes {
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+    height: auto;  
+    max-width: 100%;
+    gap: 20px;
+    background: url("../img/2.jpg") center/cover no-repeat;  
+  
+}
+.contenedor-clientes {
+    width: 85%;
+    margin-bottom: 80px;
+    
+}
+.contenedor-clientes h1{
+    text-align: center;
+    font-size: 30px;
+    margin: 40px ;
+    color: #202020;
+}
+
+.grilla-galeria {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    width: 90%; 
+    margin: 0 auto;
+    gap: 15px;
+    padding: 0 0 2em 5em;
+
+}
+.imagen {
+    width: 180px;
+    overflow: hidden; /* Evitar que las imágenes sobresalgan del contenedor */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: white;
+}
+
+.imagen img {
+    width: 100%; /* Hacer que las imágenes ocupen el 100% del contenedor */
+    height: 180px;
+  }
+
+  

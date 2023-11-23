@@ -1,0 +1,45 @@
+.contenedor-nosotros {
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/banner1.jpg") center/cover no-repeat;  
+    /* Ajusta esto según el tamaño de tu barra de navegación o el espacio superior deseado */
+    padding-top: 40px;
+    margin-top: -40px;
+
+}
+
+.fondo-nosotros {
+    text-align: none;
+    transition: background-color 0.5s ease-in-out;
+    background-color: #3498db; /* Puedes cambiar esto a tu color de fondo deseado */
+    padding: 20px;
+    color: #fff; /* Puedes cambiar esto al color de texto deseado */  
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    background-color: #0e0b0b7a;
+    padding: 40px;
+    border-radius: 30px;
+    justify-content: center;
+    max-width: 80%;  
+}
+
+.contenido-parrafo{
+    text-align: justify;
+}
+
+
+
+/***************************************************************************************************************************
+                                                   PANTALLA GRANDE
+  ***************************************************************************************************************************/
+@media screen and (min-width: 1025px) {
+    .fondo-nosotros {
+        max-width: 60%;
+    }
+}

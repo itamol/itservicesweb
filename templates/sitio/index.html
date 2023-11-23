@@ -1,0 +1,138 @@
+{% include 'sitio/cabecera.html' %}
+
+<section class="contenedor-nosotros" id="que-nosotros">
+    <div class="fondo-nosotros" id="animar"> <!-- id recuadro de texto-->
+        <h1>NOSOTROS</h1>
+        <div class="contenido-parrafo">
+            <p>Somos una agencia de desarrollo y diseño web, que trabaja con la misión de ayudar a marcas y
+                empresas a extender su crecimiento digital diseñando y creando su página web. Nos destacamos
+                por el compromiso con la calidad de servicio centrada en el cliente, teniendo en cuenta que
+                cada
+                proyecto es una oportunidad para seguir inspirando.
+            </p>
+        </div>
+        <div class="contenido-parrafo">
+            <p>
+                "Tu visión, nuestra tecnologia"
+            </p>
+        </div>
+        <div class="contenido-parrafo">
+            <button id="boton">
+                <a
+                href="https://api.whatsapp.com/send?phone=+5491127867194&text=Hola, Nececito mas informacion!"
+                target="_blank">Contáctanos</a>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contenedor-quehacemos" id="que-hacemos">
+    <div class="fondoquehacemos" id="animar">
+        <h1>LO QUE HACEMOS</h1>
+        <div class="contenido-parrafo-hacemos">
+            <p>Como agencia nos encanta apoyar a los emprendedores, por eso te ayudamos a potenciar tu marca con
+                un sitio web que genere confianza y aporte valor al consumidor, una web con propósito de conquistar
+                clientes - aliados, con un diseño que comunique los mensajes que necesita transmitir tu marca.
+            </p>
+        </div>
+
+        <div class="contenido-parrafo">
+            <button id="boton">
+                <a
+                href="https://api.whatsapp.com/send?phone=+5491127867194&text=Hola, Nececito mas informacion!"
+                target="_blank">Contáctanos</a>
+            </button>
+        </div>
+
+    </div>
+
+    </div>
+
+</section>
+
+<section class="cards-contenedor" id="servicios">
+
+    <div class="parrafo-servicio" id="animar">
+        <h1 class="titulo">SERVICIOS</h1>
+        <p>Respaldados por nuestro equipo de profesionales, diseñamos tu página web haciendo que tu público se
+            conecte con tu identidad corporativa. Prestamos servicios a diversos clientes en Latinoamérica. </p>
+    </div>
+
+    <div class="content-cards">
+        {% for varservicios in servicios %}
+        <div class="card">
+            <img src="/static/img/{{varservicios[1]}}" alt="">
+
+            <h4>{{varservicios[2]}}</h4>
+            <p class="texto">{{varservicios[3]}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="clientes">
+    <div class="contenedor-clientes" id="animar">
+        <div>
+            <h1>CLIENTES QUE CONFIAN EN NOSOTROS</h1>
+        </div>
+        <div class="grilla-galeria">
+            {% for varclientes in clientes %}
+            <div class="imagen"><img src="/static/img/{{varclientes[1]}}" alt=""></div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="contenedor-contacto" id="contacto">
+    <div class="contacto">
+        <h2 class="contacto-titulo">CONTACTO</h2>
+        <div class="contacto-detalles">
+            <div class="contacto-detalles-grupo">
+                <p class="contacto-label">Dirección: </p>
+                <p class="contacto-texto">Av. Congreso & Av. Cabildo, CABA, Argentina</p>
+            </div>
+            <div class="contacto-detalles-grupo">
+                <p class="contacto-label">Email: </p>
+                <p class="contacto-texto"><a href="mailto:itserviceweb@gmail.com">itserviceweb@gmail.com</a></p>
+            </div>
+
+            <div class="contacto-detalles-grupo">
+                <p class="contacto-texto">Deje su mensaje y con gusto le responderemos</p>
+            </div>
+        </div>
+        <form action="{{ url_for('enviar_formulario') }}" method="post" class="contacto-form" id="miFormulario"
+            onsubmit="return validarFormulario()">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div id="flash-data" data-success-message="{{ get_flashed_messages(category_filter='success') | first }}"></div>
+            
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="contacto-form-grupo">
+                <label for="nombreContacto">Nombre</label>
+                <input type="text" name="nombreContacto" id="nombreContacto">
+            </div>
+            <div class="contacto-form-grupo">
+                <label for="apellidoContacto">Apellido</label>
+                <input type="text" name="apellidoContacto" id="apellidoContacto">
+            </div>
+            <div class="contacto-form-grupo">
+                <label for="correoContacto">Email</label>
+                <input type="email" name="correoContacto" id="correoContacto" required>
+            </div>
+            <div class="contacto-form-grupo">
+                <label for="mensajeContacto">Mensaje</label>
+                <textarea name="mensajeContacto" id="mensajeContacto" rows="6"></textarea>
+            </div>
+            <button type="submit" class="boton" id="boton">Enviar</button>
+        </form>
+
+    </div>
+</section>
+
+{% include 'sitio/pie.html' %}

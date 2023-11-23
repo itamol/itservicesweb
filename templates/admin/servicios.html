@@ -1,0 +1,93 @@
+{% include 'admin/cabecera.html' %}
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header bg-info">
+                   <strong> DATOS DE LOS SERVICIOS</strong>
+                </div>
+                <div class="card-body">
+
+
+                    <form action="/admin/servicios/guardar" method="post" enctype="multipart/form-data">
+
+                        <div class="mb-3">
+                            <label for="txtImagen" class="form-label"><strong>Imagen</strong></label>
+                            <input type="file" class="form-control" name="txtImagen" id="txtImagen"
+                                aria-describedby="helpId" placeholder="Selecciona la Imagen" required>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="txtNombre" class="form-label"><strong>Nombre del Servicio</strong></label>
+                            <input type="text" class="form-control" name="txtNombre" id="txtNombre"
+                                aria-describedby="helpId" placeholder="Escriba el Nombre del Servicio" maxlength="25" required>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="txtParrafo" class="form-label"><strong>Descripción</strong></label>
+                            <input type="text" class="form-control" name="txtParrafo" id="txtParrafo"
+                                aria-describedby="helpId" placeholder="Escriba una descripción corta" maxlength="185" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-7">
+
+            <div class="table-responsive">
+                <table class="table table-light table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="bg-success" scope="col">ID</th>
+                            <th class="bg-success" scope="col">Imagen</th>
+                            <th class="bg-success" scope="col">Nombre</th>
+                            <th class="bg-success" scope="col">Descripción</th>
+                            <th class="bg-success" scope="col">Acciones</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for varservicios in servicios %}
+                        <tr>
+                            <td>{{varservicios[0]}}</td>
+                            <td>
+                                <img width="60" src="/static/img/{{varservicios[1]}}" class="img-fluid rounded-top"
+                                    alt="">
+                            </td>
+                            <td>{{varservicios[2]}}</td>
+                            <td>{{varservicios[3]}}</td>
+                            <td>
+                                <form action="/admin/servicios/borrar" method="post">
+                                    <input value="{{varservicios[0]}}" type="hidden" name="txtID" id="txtID">
+                                    <button type="submit" class="btn btn-link btn-eliminar btn-sm">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+{% include 'admin/pie.html' %}

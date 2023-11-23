@@ -1,0 +1,32 @@
+.fond-login {
+    background-image: url('../img/login.png'); /* Reemplaza 'ruta/de/tu/imagen.jpg' con la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ajusta la altura según sea necesario */
+
+}
+
+.nav {
+  margin-left: 100px; 
+ 
+}
+.nav-item {
+  margin-left: 15px; 
+ 
+}
+.textareadmin {
+  height: 500px; 
+  resize: none;
+  text-align: justify;
+}
+.btn-ver{
+  color: green;
+}
+
+.btn-eliminar{
+  color: red;
+}
+.container{
+  margin-top: 5%;
+}

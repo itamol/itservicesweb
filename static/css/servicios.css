@@ -1,0 +1,70 @@
+/* Cards */
+#servicios {   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto; 
+    margin-bottom: 50px;
+    background: url("../img/servicios.jpg") center/cover no-repeat;  
+}
+
+.titulo{  
+    margin: 20px;
+    font-size: 30px;
+    color: #202020;
+}
+
+.parrafo-servicio{
+    text-align: center;
+    max-width: 90%;  
+}
+.cards-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.content-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 270px;
+    margin: 30px 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    gap: 5px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px; /* Añade bordes redondeados a las imágenes */
+}
+
+.card p {
+    margin: 10px ;
+}
+
+/***************************************************************************************************************************
+                                                   PANTALLA GRANDE
+  ***************************************************************************************************************************/
+  @media screen and (min-width: 1025px) {
+    .parrafo-servicio{
+        max-width: 80%;  
+    }
+    .card {
+        margin: 70px 30px; 
+     }
+}
+
+
+

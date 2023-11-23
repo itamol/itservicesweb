@@ -1,0 +1,126 @@
+/********************************CONTACTO************************************/
+#contacto {
+    max-width: 90%;
+    margin: 0 auto;
+
+}
+
+.contenedor-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    margin: 0 auto;
+
+}
+
+.contacto {
+    border-radius: 14px;
+    padding: 25px;
+    display: grid;
+    gap: 25px;
+    width: 100%;
+    background: url("../img/1.png") center/cover no-repeat;
+}
+
+.contacto p .contacto h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.contacto-titulo {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0 30px 0;
+    font-size: 28px;
+    color: #202020;
+}
+
+.contacto-detalles,
+.contacto-form {
+    display: grid;
+    gap: 20px;
+}
+
+.contacto-detalles-grupo,
+.contacto-form-grupo {
+    display: grid;
+    gap: 3px;
+}
+
+.contacto-label {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #202020;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    border-radius: 7px;
+    border: none;
+    height: 30px;
+    padding: 5px 10px;
+}
+
+.contacto-form textarea {
+    height: auto;
+    resize: vertical;
+}
+
+.contacto-form button {
+    display: grid;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.contacto-texto a {
+    color: #202020;
+    text-decoration: underline;
+}
+/* Estilo para la alerta más pequeña */
+.small-alert .swal2-popup {
+    width: 60% !important;   /* Ajusta el ancho según sea necesario, usando !important para asegurar la prioridad */
+    font-size: 11px; /* Ajusta el tamaño de la fuente según sea necesario */
+ 
+}
+
+/***************************************************************************************************************************
+PANTALLA GRANDE
+***************************************************************************************************************************/
+@media screen and (min-width: 1025px) {
+
+    /********************************************CONTACTO**********************************/
+    #contacto {
+        padding-top: 30px;
+    }
+
+    .contacto-titulo {
+        text-align: left;
+    }
+
+    /*grid area para contacto*/
+    .contacto {
+        grid:
+            "titulo     formulario" auto "detalles   formulario" 1fr "redsocial  ." auto / 1fr 1fr;
+        align-items: start;
+        width: 80%;
+    }
+
+    .contacto-titulo {
+        grid-area: titulo;
+    }
+
+    .contacto-detalles {
+        grid-area: detalles;
+    }
+
+    .contacto-form {
+        grid-area: formulario;
+    }
+
+    /* Estilo para la alerta más pequeña */
+    .small-alert .swal2-popup {
+        width: 30% !important;
+        /* Ajusta el ancho según sea necesario, usando !important para asegurar la prioridad */
+    }
+}

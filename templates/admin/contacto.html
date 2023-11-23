@@ -1,0 +1,101 @@
+{% include 'admin/cabecera.html' %}
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+
+            <div class="table-responsive">
+                <table class="table table-light table-bordered  ">
+                    <thead>
+                        <tr>
+                            <th class="bg-info" scope="col">Nombre</th>
+                            <th class="bg-info" scope="col">Apellido</th>
+                            <th class="bg-info" scope="col">Correo</th>
+                            <th class="bg-info" scope="col">Mensaje</th>
+                            <th class="bg-info" scope="col">Acciones</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for varcontacto in contactos %}
+                        <tr>
+                            <td>{{varcontacto[1]}}</td>
+                            <td>{{varcontacto[2]}}</td>
+                            <td>{{varcontacto[3]}}</td>
+                            <td>{{ (varcontacto[4][:100] + '...') if varcontacto[4] is defined and varcontacto[4]|length
+                                > 100 else varcontacto[4] }}</td>
+
+
+                            <td>
+                                <form action="{{ url_for('admin_contacto_mostrar') }}" method="post">
+                                    <input value="{{varcontacto[0]}}" type="hidden" name="txtID" id="txtID">
+                                    <button type="submit" class="btn btn-link btn-ver btn-sm">DETALLES</button>
+                                </form>
+                                <form action="/admin/contacto/borrar" method="post">
+                                    <input value="{{varcontacto[0]}}" type="hidden" name="txtIDBorrar" id="txtIDBorrar">
+                                    <button type="submit" class="btn btn-link btn-eliminar">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+
+        {% for vercontacto in vercontacto %}
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header bg-success">
+                    <strong> DETALLES DEL CONTACTO DEL CLIENTE</strong>
+                </div>
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label for="txtNombre" class="form-label"><strong>Nombre</strong></label>
+                        <input type="text" class="form-control" id="txtNombre" name="txtNombre"
+                            value=" {{vercontacto[1]}}" readonly>
+
+
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="txtApellido" class="form-label"><strong>Apellido</strong></label>
+                        <input type="text" class="form-control" id="txtApellido" name="txtApellido"
+                            value=" {{vercontacto[2]}}" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="txtCorreo" class="form-label"><strong>Correo</strong></label>
+                        <input type="email" class="form-control" id="txtCorreo" name="txtCorreo"
+                            value=" {{vercontacto[3]}}" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="txtMensaje" class="form-label"><strong>Mensaje</strong></label>
+                        <textarea class="form-control textareadmin" id="txtMensaje"
+                            name="txtMensaje">{{vercontacto[4] }}</textarea>
+
+                        <!-- Agrega el botón para abrir el correo -->
+                        <button type="button" class="btn btn-primary"
+                            onclick="abrirCorreo('{{vercontacto[3]}}')">Responder</button>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+
+{% include 'admin/pie.html' %}

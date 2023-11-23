@@ -1,0 +1,32 @@
+.contenedor-quehacemos {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/NOSOTROS\ IMAGEN\ GRANDE.jpg") center/cover no-repeat; 
+}
+
+.fondoquehacemos {
+    transition: background-color 0.5s ease-in-out;
+    background-color: #3498db; /* Puedes cambiar esto a tu color de fondo deseado */
+    color: #fff; /* Puedes cambiar esto al color de texto deseado */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    background-color: #0e0b0b7a;
+    padding: 40px;
+    border-radius: 30px;
+    justify-content: center;
+    max-width: 80%;  
+}
+
+/***************************************************************************************************************************
+                                                   PANTALLA GRANDE
+  ***************************************************************************************************************************/
+  @media screen and (min-width: 1025px) {
+    .fondoquehacemos {
+        max-width: 60%;
+    }
+}

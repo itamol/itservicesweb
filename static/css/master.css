@@ -1,0 +1,185 @@
+:root[data-theme="light"] {
+    --theme-color: #fbfbfb;
+    --text-color: #0f0f0f;
+    --text-color-inverse: #fbfbfb;
+    --shadow-color: #0f0f0f;
+    --mobile-color: #3a4460;
+    --text-button-color: #fbfbfb;
+    --background-button-color: #207DA9;
+    --background-color-2: #5d55da;
+    --mobile-text-color: #5d55da;
+    --link-color: rgb(33, 33, 158);
+    --transition: 0.2s;
+    --sombra: rgba(0, 0, 0, 0.2);
+    --color-secundario: #787878;
+}
+
+
+:root[data-theme="dark"] {
+    --theme-color: #0f172a;
+    --text-color: rgba(255, 255, 255, 0.87);
+    --text-color-inverse: rgba(255, 255, 255, 0.87);
+    --shadow-color: #e5e5e5;
+    --mobile-color: #18213e;
+    --text-button-color: var(--text-color);
+    --background-button-color: #207DA9;
+    --background-color-2: #554b555d;
+    --mobile-text-color: #5d55da;
+    --link-color: #b6983d;
+    
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.2;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+body {
+    margin: 0 auto;
+    background-color: var(--theme-color);
+    scroll-behavior: smooth;
+    
+}
+
+main {
+    margin: 0 auto;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+p,
+label {
+    font-size: 0.88em;
+}
+
+a {
+    color: var(--text-button-color);
+    font-size: 0.9em;
+}
+
+li {
+    list-style: none;
+
+}
+
+ul {
+    padding-left: 10px;
+    line-height: 1.2;
+}
+
+#boton {
+    border: none;
+    background-color: var(--background-button-color);
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: var(--text-button-color);
+    margin: 20px; 
+}
+
+#boton:hover {
+    background-color: var(--mobile-text-color);
+}
+
+.elemento {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.elemento:hover {
+    transform: rotate(90deg);
+}
+
+footer {
+    height: 90px;
+    width: 100%;
+    background-color: var(--background-button-color);
+    color: var(--text-button-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.elemento {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.elemento:hover {
+    transform: rotate(90deg);
+}
+
+
+
+@keyframes animacionDesplazamiento {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contenedor-nosotros {
+    animation: animacionDesplazamiento 1s ease-out;
+}
+
+@keyframes miAnimacion {
+    from {
+        opacity: 0; /* Inicio invisible */
+    }
+    to {
+        opacity: 1; /* Fin completamente visible */
+    }
+}
+
+/* Animación al elemento con el ID quenosotros */
+#animar {
+    animation: miAnimacion 2s ease-in-out; /* Puedes ajustar la duración y la función de temporización según tus preferencias */
+}
