@@ -105,7 +105,7 @@ def admin_servicios():
 
 @app.route('/admin/cerrar')
 def admin_cerrar():
-    return render_template('admin/cerrar.html')
+    return render_template('sitio/cerrar.html')
 
 #enruta para ver la imagen
 @app.route('/static/img/<imagen>')
